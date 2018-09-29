@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm bg-dark justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+  </ul>
+</nav>
+<br>
+<div class="container">
+  <h2>Tweets list</h2>
+  <p>Here you can find the tweets fetched and saved to our mongodb just after any of the marketing team say any sentence
+    started with "go" word</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Tweet text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tweet of tweetsLoaded">
+        <td>{{ tweet.user.screen_name }}</td>
+        <td>{{ tweet.entities.user_mentions[0].screen_name }}</td>
+        <td>{{ tweet.text }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
