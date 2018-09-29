@@ -14,6 +14,7 @@ describe('tweets', function() {
       .get('/twitter/all-tweets')
       .end(function(err, res) {
         res.should.have.status(200);
+        res.should.be.json;
         expect(res.body.data).to.be.an('array').that.is.not.empty;
         done();
       });

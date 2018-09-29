@@ -1,11 +1,16 @@
 let twitterContollers = require('../twitter/controllers');
 
-exports.specificKeywordDetected = async function (req, res) {
-    await twitterContollers.fetchTweets(function (done) {
-        if (done) {
-            res.json({
-                "text": "Thanks for your 'Go' sentence!"
-            })
-        }
-    })
+exports.specificKeywordDetected = function(req, res) {
+   twitterContollers.fetchTweets(function(done) {
+     console.log(done);
+    if (done === true) {
+      res.json({
+        "text": "Thanks for your 'Go' sentence!"
+      })
+    } else {
+      res.json({
+        "text": "Couldn't excute the 'Go' sentence operation correctly"
+      })
+    }
+  })
 }
