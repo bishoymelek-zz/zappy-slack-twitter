@@ -6,7 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-var debug = require('debug')('my-application');
+// var debug = require('debug')('my-application');
 
 require('dotenv').config()
 
@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 app.listen(app.get('port'), function () {
-    debug('Express server listening on port ');
+    console.log('Express server listening on port ');
 });
 app.use('/slack', slackComponent);
 app.use('/twitter', twitterComponent);
