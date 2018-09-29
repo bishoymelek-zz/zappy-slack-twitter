@@ -18,15 +18,14 @@ You need to have a working (and approved) developer account on Slack and Twitter
  1. First of all clone our repository by running the following command:
 > git clone https://github.com/bishoymelek/zappy-slack-twitter
 2.  Then inside the 'backend' folder , We will create a file '.env' with some variables like this :
-> PORT=THE PORT YOU WANT TO USE , LIKE : 5500
-Twitter_API_key=YOUR TWITTER DEVELOPER ACCOUNT API KEY
-Twitter_API_secret_key=YOUR TWITTER DEVELOPER ACCOUNT API SECRET KEY
- Twitter_Account_Screen_Name=THE TWITTER ACCOUNT YOU WANT TO FETCH TWEETS FROM
+> PORT=THE PORT YOU WANT TO USE , LIKE : 5500  
+> Twitter_API_key=YOUR TWITTER DEVELOPER ACCOUNT API KEY  
+> Twitter_API_secret_key=YOUR TWITTER DEVELOPER ACCOUNT API SECRET KEY  
+> Twitter_Account_Screen_Name=THE TWITTER ACCOUNT YOU WANT TO FETCH TWEETS FROM  
 
  3. Then we will be using **Docker** in running the project by running the following commands :
- > docker-compose up -d mongo
+ > docker-compose up -d mongo  
  > docker-compose up node
- >
  4. After that we will use Ngrok to help us have a public ip address in order to integrate with Slack from localhost , download it from here first:
  > https://ngrok.com/download
  5. Then we will run ngrok on the same port we defined in the .env file in step 2 .. so let's run the following command in the same folder of the ngrok app :
@@ -41,7 +40,7 @@ Twitter_API_secret_key=YOUR TWITTER DEVELOPER ACCOUNT API SECRET KEY
  10. If you got this message , that means the process is done correctly! and the tweets already fetched for the twitter user you mentioned in step 2 above in the .env file 'Twitter_Account_Screen_Name'
  11. Now head to the 'frontend' folder and edit src/app/vars.ts file .. you will have to edit the value for the 'baseUrl' property to make it point to the PORT you mentioned in step 2 above , to let the url end with 5500 for example.
  12. run the following commands in the 'frontend' folder:
- > npm i
+ > npm i  
  > ng serve
  13. You should now open the url displayed on the console now in the browser so you can find the fetched tweets in a simple table.
 
